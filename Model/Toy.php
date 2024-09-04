@@ -1,31 +1,57 @@
 <?php
-require_once 'Product.php';
-require_once 'ItemType.php';
 
-class Toy extends Product{
-    public string $material;
-    public string $size;
+class Product {
+    public string $name;
+    public ItemTtype  $type;
+    public Category $category;
+    public string $image;
+    public float $price;
 
+// inizializiamo il costruttore 
 
-    public function __construct(string $_name,Category $_category,string $_image,float $_price,string $material, string $size){
+    function __constructor(string $name, Category $category, string $image, float $price, ItemType $type){
 
-        parent::__construct($name, new ItemType('Toy'), $category, $image, $price);
-        $this->material= $material;
-        $this->size=$size;
-
-     
-
-    
+        $this->name = $name;
+        $this->type = $type;
+        $this->category = $category;
+        $this->image = $image;
+        $this->price = $price;
+        
     }
 
-    // getting
+// getting per salvare i valori 
 
-        public function getMaterial(){
-            return $this-> material;
-        }
-
-        public function getSize(){
-            return $this->size;
-        }
+// name
+public function getName(){
+    return $this->name;
 }
+
+// type
+public function getType(){
+    return $this->type;
+}
+//category
+
+public function getCategory(){
+    return $this->category;
+
+}
+
+// image
+
+public function getImage(){
+    return $this->image;
+}
+
+// price
+
+public function getPrice(){
+    return $this->price;
+}
+
+
+}
+
+
+
 ?>

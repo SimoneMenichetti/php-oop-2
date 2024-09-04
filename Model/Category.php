@@ -4,10 +4,9 @@ class Category {
     public string $name;
     public string $iconClass;
 
-
     public function __construct(string $name, string $iconClass){
         $this->name = $name;
-        $this->$iconClass = $$iconClass;
+        $this->iconClass = $iconClass;
     }
 
     public function getName(){
@@ -15,7 +14,7 @@ class Category {
     }
 
     public function getIcon(){
-        return $this->$iconClass;
+        return $this->iconClass;
     }
 }
 

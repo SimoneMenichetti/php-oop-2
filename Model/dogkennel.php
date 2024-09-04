@@ -1,19 +1,14 @@
 <?php
-
 require_once 'Product.php';
 
-class dogKennel extends Product{
+class DogKennel extends Product {  // Correggi il nome della classe in maiuscolo per coerenza
     public string $dimension;
     public string $color;
 
-    public function __construct(string $_name,Category $_category,string $_image,float $_price, string $dimension, string $color){
-
-
-        parent::__construct($name, new ItemType('DogKennel'), $category, $image, $price);
-            $this->dimension= $dimension;
-            $this->color= $color;
-
-        
+    public function __construct(string $name, Category $category, string $image, float $price, string $dimension, string $color){
+        parent::__construct($name, $category, $image, $price, new ItemType('DogKennel'));
+        $this->dimension = $dimension;
+        $this->color = $color;
     }
 
     public function getDimension(){
@@ -24,4 +19,5 @@ class dogKennel extends Product{
         return $this->color;
     }
 }
+
 ?>

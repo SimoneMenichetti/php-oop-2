@@ -9,7 +9,7 @@ class Product {
 
 // inizializiamo il costruttore 
 
-    function __constructor(string $name, Category $category, string $image, float $price, ItemType $type){
+    function ____construct(string $name, Category $category, string $image, float $price, ItemType $type){
 
         $this->name = $name;
         $this->type = $type;
