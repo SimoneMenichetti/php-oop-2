@@ -9,7 +9,7 @@ class dogKennel extends Product{
     public function __construct(string $_name,Category $_category,string $_image,float $_price, string $dimension, string $color){
 
 
-        parent::__construct($name,$category, $image, $price,new ItemType('dogKennel'));
+        parent::__construct($name, new ItemType('DogKennel'), $category, $image, $price);
             $this->dimension= $dimension;
             $this->color= $color;
 

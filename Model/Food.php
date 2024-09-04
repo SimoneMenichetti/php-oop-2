@@ -1,5 +1,7 @@
 <?php
 require_once 'Product.php';
+require_once 'ItemType.php';
+
 // estendiamo Product classe Padre 
 
 class Food extends Product{
@@ -11,7 +13,7 @@ class Food extends Product{
 
          // utilizziamo Parent::__construct per relazionare figlio con il padre
 
-         parent::__construct($name, $type, $category, $image,$price,new ItemType('Food'));
+         parent::__construct($name, new ItemType('Food'), $category, $image, $price);
          $this->taste=$taste;
          $this->weight=$weight;
 

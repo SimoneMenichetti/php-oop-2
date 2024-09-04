@@ -1,5 +1,6 @@
 <?php
 require_once 'Product.php';
+require_once 'ItemType.php';
 
 class Toy extends Product{
     public string $material;
@@ -8,7 +9,7 @@ class Toy extends Product{
 
     public function __construct(string $_name,Category $_category,string $_image,float $_price,string $material, string $size){
 
-        parent::__construct($name, $price, $image, $category, new ItemType('Toy'));
+        parent::__construct($name, new ItemType('Toy'), $category, $image, $price);
         $this->material= $material;
         $this->size=$size;
 
