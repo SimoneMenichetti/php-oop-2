@@ -2,14 +2,14 @@
 
 class Product {
     public string $name;
-    public $type;
-    public $category;
+    public ItemTtype  $type;
+    public Category $category;
     public string $image;
     public float $price;
 
 // inizializiamo il costruttore 
 
-    function __constructor(string $_name,$_type,$_category,string $_image,float $_price){
+    function __constructor(string $_name,ItemTtype $_type,Category $_category,string $_image,float $_price){
 
         $this->name = $name;
         $this->type = $type;
