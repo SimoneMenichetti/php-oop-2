@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/Modules/Product.php';
+    require_once __DIR__ . '/Model/Product.php';
 
 
 ?>
