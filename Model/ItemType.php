@@ -1,19 +1,16 @@
 <?php
 
-class ItemType{
+class ItemType {
     public string $name;
 
-    public function __construct(string $name){
-        $this->name=$name;
-
+    // Costruttore
+    public function __construct(string $name) {
+        $this->name = $name;
     }
 
-    // getting
-
-    public function getName(){
+    // Getter
+    public function getName() {
         return $this->name;
-    
     }
 }
-
 ?>

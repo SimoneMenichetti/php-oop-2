@@ -4,18 +4,19 @@ class Category {
     public string $name;
     public string $iconClass;
 
-    public function __construct(string $name, string $iconClass){
+    // Costruttore
+    public function __construct(string $name, string $iconClass) {
         $this->name = $name;
         $this->iconClass = $iconClass;
     }
 
-    public function getName(){
+    // Getter
+    public function getName() {
         return $this->name;
     }
 
-    public function getIcon(){
+    public function getIcon() {
         return $this->iconClass;
     }
 }
-
 ?>

@@ -6,20 +6,20 @@ class Food extends Product {
     public string $taste;
     public int $weight;
 
-    public function __construct(string $name, Category $category, string $image, float $price, string $taste, int $weight){
+    // Costruttore
+    public function __construct(string $name, Category $category, string $image, float $price, string $taste, int $weight) {
         parent::__construct($name, $category, $image, $price, new ItemType('Food'));
         $this->taste = $taste;
         $this->weight = $weight;
     }
 
-    // Getting
-    public function getTaste(){
+    // Getter
+    public function getTaste() {
         return $this->taste;
     }
 
-    public function getWeight(){
+    public function getWeight() {
         return $this->weight;
     }
 }
-
 ?>
