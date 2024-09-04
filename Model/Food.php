@@ -1,4 +1,5 @@
 <?php
+require_once 'Product.php';
 // estendiamo Product classe Padre 
 
 class Food extends Product{
