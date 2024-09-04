@@ -1,7 +1,7 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 // Inclusione dei file necessari
 require_once __DIR__ . '/Data/Productdb.php';
 require_once __DIR__ . '/Model/Category.php';
@@ -29,16 +29,127 @@ $products = getProducts();
      
 <body>
     <!-- contenitore prodotti -->
-    <div class="product-container">
-        <?php foreach ($products as $product): ?>
-            <div class="product-card">
-                <img src="<?php echo htmlspecialchars($product->getImage()); ?>" alt="<?php echo htmlspecialchars($product->getName()); ?>">
-                <h3><?php echo htmlspecialchars($product->getName()); ?></h3>
-                <p>Price: €<?php echo htmlspecialchars($product->getPrice()); ?></p>
-                <p>Category: <i class="<?php echo htmlspecialchars($product->getCategory()->getIcon()); ?>"></i> <?php echo htmlspecialchars($product->getCategory()->getName()); ?></p>
-                <p>Type: <?php echo htmlspecialchars($product->getType()->getName()); ?></p>
+    <div class="product-section">
+        <!-- Colonna Sinistra: Dog Products -->
+        <div class="product-column">
+            <h2>Dog Toys</h2>
+            <div class="product-container">
+                <?php
+                $products = getProducts();
+                foreach ($products as $product) {
+                    if ($product->getCategory()->getName() === 'Dog' && $product->getType()->getName() === 'Toy') {
+                        ?>
+                        <div class="product-card">
+                            <img src="<?php echo $product->getImage(); ?>" alt="<?php echo $product->getName(); ?>">
+                            <h3><?php echo $product->getName(); ?></h3>
+                            <p>Price: €<?php echo $product->getPrice(); ?></p>
+                            <p>Category: <i class="<?php echo $product->getCategory()->getIcon(); ?>"></i> <?php echo $product->getCategory()->getName(); ?></p>
+                            <p>Type: <?php echo $product->getType()->getName(); ?></p>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
             </div>
-        <?php endforeach; ?>
+            
+            <h2>Dog Food</h2>
+            <div class="product-container">
+                <?php
+                foreach ($products as $product) {
+                    if ($product->getCategory()->getName() === 'Dog' && $product->getType()->getName() === 'Food') {
+                        ?>
+                        <div class="product-card">
+                            <img src="<?php echo $product->getImage(); ?>" alt="<?php echo $product->getName(); ?>">
+                            <h3><?php echo $product->getName(); ?></h3>
+                            <p>Price: €<?php echo $product->getPrice(); ?></p>
+                            <p>Category: <i class="<?php echo $product->getCategory()->getIcon(); ?>"></i> <?php echo $product->getCategory()->getName(); ?></p>
+                            <p>Type: <?php echo $product->getType()->getName(); ?></p>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
+            
+            <h2>Dog Kennel</h2>
+            <div class="product-container">
+                <?php
+                foreach ($products as $product) {
+                    if ($product->getCategory()->getName() === 'Dog' && $product->getType()->getName() === 'DogKennel') {
+                        ?>
+                        <div class="product-card">
+                            <img src="<?php echo $product->getImage(); ?>" alt="<?php echo $product->getName(); ?>">
+                            <h3><?php echo $product->getName(); ?></h3>
+                            <p>Price: €<?php echo $product->getPrice(); ?></p>
+                            <p>Category: <i class="<?php echo $product->getCategory()->getIcon(); ?>"></i> <?php echo $product->getCategory()->getName(); ?></p>
+                            <p>Type: <?php echo $product->getType()->getName(); ?></p>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
+        </div>
+
+        <!-- Colonna Destra: Cat Products -->
+        <div class="product-column">
+            <h2>Cat Toys</h2>
+            <div class="product-container">
+                <?php
+                foreach ($products as $product) {
+                    if ($product->getCategory()->getName() === 'Cat' && $product->getType()->getName() === 'Toy') {
+                        ?>
+                        <div class="product-card">
+                            <img src="<?php echo $product->getImage(); ?>" alt="<?php echo $product->getName(); ?>">
+                            <h3><?php echo $product->getName(); ?></h3>
+                            <p>Price: €<?php echo $product->getPrice(); ?></p>
+                            <p>Category: <i class="<?php echo $product->getCategory()->getIcon(); ?>"></i> <?php echo $product->getCategory()->getName(); ?></p>
+                            <p>Type: <?php echo $product->getType()->getName(); ?></p>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
+            
+            <h2>Cat Food</h2>
+            <div class="product-container">
+                <?php
+                foreach ($products as $product) {
+                    if ($product->getCategory()->getName() === 'Cat' && $product->getType()->getName() === 'Food') {
+                        ?>
+                        <div class="product-card">
+                            <img src="<?php echo $product->getImage(); ?>" alt="<?php echo $product->getName(); ?>">
+                            <h3><?php echo $product->getName(); ?></h3>
+                            <p>Price: €<?php echo $product->getPrice(); ?></p>
+                            <p>Category: <i class="<?php echo $product->getCategory()->getIcon(); ?>"></i> <?php echo $product->getCategory()->getName(); ?></p>
+                            <p>Type: <?php echo $product->getType()->getName(); ?></p>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
+            
+            <h2>Cat Kennel</h2>
+            <div class="product-container">
+                <?php
+                foreach ($products as $product) {
+                    if ($product->getCategory()->getName() === 'Cat' && $product->getType()->getName() === 'DogKennel') {
+                        ?>
+                        <div class="product-card">
+                            <img src="<?php echo $product->getImage(); ?>" alt="<?php echo $product->getName(); ?>">
+                            <h3><?php echo $product->getName(); ?></h3>
+                            <p>Price: €<?php echo $product->getPrice(); ?></p>
+                            <p>Category: <i class="<?php echo $product->getCategory()->getIcon(); ?>"></i> <?php echo $product->getCategory()->getName(); ?></p>
+                            <p>Type: <?php echo $product->getType()->getName(); ?></p>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
+        </div>
     </div>
 </body>
 </html>
