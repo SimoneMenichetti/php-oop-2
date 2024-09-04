@@ -6,7 +6,7 @@ class Toy extends Product{
     public string $size;
 
 
-    public function __construct(string $_name,ItemTtype $_type,Category $_category,string $_image,float $_price,string $taste,int $weight,string $material, string $size){
+    public function __construct(string $_name,Category $_category,string $_image,float $_price,string $material, string $size){
 
         parent::__construct($name, $price, $image, $category, new ItemType('Toy'));
         $this->material= $material;
