@@ -17,11 +17,5 @@ $products = [
     new Toy("Dog Ball", $dogCategory, "https://www.lelepetshop.it/images/thumbs/0002949_gioco-cane-palla-tennis-gigante-maxi-15-cm-diametro_550.png", 8.99, "Rubber", "Medium"),
     new DogKennel("Dog Kennel", $dogCategory, "https://www.gardenbedettishop.com/16599-large_default/cuccia-per-cani-charles-50-ferplast.jpg", 35.00, "Large", "Grey"),
     new DogKennel("Cat Kennel", $catCategory, "https://www.gardenbedettishop.com/16599-large_default/cuccia-per-gatti.jpg", 30.00, "Medium", "Beige"),
-    
-];
 
-function getProducts() {
-    global $products;
-    return $products;
-}
-?>
+];
