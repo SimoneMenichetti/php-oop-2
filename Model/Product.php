@@ -26,6 +26,8 @@ class Product
 
     function setName(string $name)
     {
+
+        // condizione e throw per generare l'errore in caso di validazione
         if (empty($name)) {
             throw new Exception("Il nome del prodotto non può essere vuoto ");
         }

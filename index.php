@@ -11,6 +11,10 @@ require_once __DIR__ . '/Model/Food.php';
 require_once __DIR__ . '/Model/Toy.php';
 require_once __DIR__ . '/Model/DogKennel.php';
 
+// try per interrogare la funzione  e catch per catturare l'errore
+
+
+
 
 ?>
 <!DOCTYPE html>
