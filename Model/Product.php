@@ -11,7 +11,14 @@ class Product
     // Costruttore
     public function __construct(string $name, Category $category, string $image, float $price, ItemType $type)
     {
-        $this->name = $name;
+        // uso di setName try per prendere la funzione e catch per catturare l evento error 
+        try {
+            $this->setName($name);
+            // uso di exception e la variabile $e per prendere e stampare il valore di exception
+        } catch (Exception $e) {
+            echo 'Errore' . $e->getMessage();
+        }
+
         $this->type = $type;
         $this->category = $category;
         $this->image = $image;
@@ -32,11 +39,12 @@ class Product
             throw new Exception("Il nome del prodotto non può essere vuoto ");
         }
 
-        if (empty($name) > 3) {
+        if (strlen($name) < 3) {
             throw new Exception("il nome del prodotto non può essere inferiore a 3 caratteri");
-        }
+        } else {
 
-        $this->name = $name;
+            $this->name = $name;
+        }
     }
 
     // Getter
