@@ -41,10 +41,9 @@ class Product
 
         if (strlen($name) < 3) {
             throw new Exception("il nome del prodotto non può essere inferiore a 3 caratteri");
-        } else {
-
-            $this->name = $name;
         }
+
+        $this->name = $name;
     }
 
     // Getter
